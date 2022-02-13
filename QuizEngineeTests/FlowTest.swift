@@ -56,13 +56,43 @@ class FlowTest: XCTestCase {
         XCTAssertEqual(router.routedQuestions, ["Q1"])
     }
     
+    func test_answerAllQuestions_routeToResult() {
+        let sut = makeSUT(questions: ["Q1", "Q2"])
+        sut.start()
+        
+        router.callbackAnswer("A1")
+        router.callbackAnswer("A2")
+        
+        XCTAssertEqual(router.results, ["Q1":"A1", "Q2":"A2"])
+    }
+    
+    func test_notAnswerAllQuestion_doesNotRouteToResult() {
+        let sut = makeSUT(questions: ["Q1", "Q2"])
+        sut.start()
+        
+        router.callbackAnswer("A1")
+        XCTAssertNil(router.results)
+    }
+    
+    func test_WithNoQuestion_RouteToResult() {
+        let sut = makeSUT(questions: [])
+        sut.start()
+        
+        XCTAssertEqual(router.results, [:])
+    }
+    
     class RouterMock: Router {
+        var results: [String: String]?
         var routedQuestions: [String] = []
         var callbackAnswer: ((String) -> Void) = { _ in }
         
         func routeTo(question: String, callback: @escaping (String) -> Void) {
             routedQuestions.append(question)
             callbackAnswer = callback
+        }
+        
+        func routeTo(results: [String : String]) {
+            self.results = results
         }
     }
 }
