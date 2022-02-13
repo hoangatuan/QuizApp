@@ -48,6 +48,14 @@ class FlowTest: XCTestCase {
         XCTAssertEqual(router.routedQuestions, ["Q1", "Q2", "Q3"])
     }
     
+    func test_startWith1Question_answer1Question_doesNotRoute() {
+        let sut = makeSUT(questions: ["Q1"])
+        sut.start()
+        
+        router.callbackAnswer("A1")
+        XCTAssertEqual(router.routedQuestions, ["Q1"])
+    }
+    
     class RouterMock: Router {
         var routedQuestions: [String] = []
         var callbackAnswer: ((String) -> Void) = { _ in }

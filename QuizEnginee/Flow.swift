@@ -35,10 +35,12 @@ class Flow {
             return
         }
         
-        let nextQuestion = questions[index + 1]
-        router.routeTo(question: nextQuestion,
-                       callback: { [weak self] _ in
-            self?.handleAnswerCallback(of: nextQuestion)
-        })
+        if index + 1 < questions.count {
+            let nextQuestion = questions[index + 1]
+            router.routeTo(question: nextQuestion,
+                           callback: { [weak self] _ in
+                self?.handleAnswerCallback(of: nextQuestion)
+            })
+        }
     }
 }
