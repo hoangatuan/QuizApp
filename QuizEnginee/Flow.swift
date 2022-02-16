@@ -8,16 +8,19 @@
 import Foundation
 
 protocol Router {
-    func routeTo(question: String, callback: @escaping (String) -> Void)
-    func routeTo(results: [String: String])
+    associatedtype Question: Hashable
+    associatedtype Answer
+    
+    func routeTo(question: Question, callback: @escaping (Answer) -> Void)
+    func routeTo(results: [Question: Answer])
 }
 
-class Flow {
-    private var results: [String: String] = [:]
-    var router: Router
-    let questions: [String]
+class Flow<Question, Answer, R: Router> where Question == R.Question, Answer == R.Answer {
+    private var results: [Question: Answer] = [:]
+    var router: R
+    let questions: [Question]
     
-    init(questions: [String], router: Router) {
+    init(questions: [Question], router: R) {
         self.questions = questions
         self.router = router
     }
@@ -33,7 +36,7 @@ class Flow {
         })
     }
     
-    func handleAnswerCallback(of question: String, _ answer: String) {
+    func handleAnswerCallback(of question: Question, _ answer: Answer) {
         guard let index = questions.firstIndex(of: question) else {
             return
         }

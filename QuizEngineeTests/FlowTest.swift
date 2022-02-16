@@ -98,7 +98,7 @@ class FlowTest: XCTestCase {
 }
 
 extension FlowTest {
-    func makeSUT(questions: [String]) -> Flow {
+    func makeSUT(questions: [String]) -> Flow<String, String, RouterMock> {
         let sut = Flow(questions: questions, router: router)
         return sut
     }
