@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DF4E60BB27B8178600A48B73 /* QuizEnginee.docc in Sources */ = {isa = PBXBuildFile; fileRef = DF4E60BA27B8178600A48B73 /* QuizEnginee.docc */; };
 		DF4E60BC27B8178600A48B73 /* QuizEnginee.h in Headers */ = {isa = PBXBuildFile; fileRef = DF4E60B927B8178600A48B73 /* QuizEnginee.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DF4E60C927B817B800A48B73 /* QuizEngineeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E60C827B817B800A48B73 /* QuizEngineeTests.swift */; };
 		DF4E60CA27B817B800A48B73 /* QuizEnginee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4E60B627B8178600A48B73 /* QuizEnginee.framework */; };
 		DF4E60D127B817C800A48B73 /* FlowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E60D027B817C800A48B73 /* FlowTest.swift */; };
 		DFCFB0E327B8C106003E286F /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCFB0E227B8C106003E286F /* Flow.swift */; };
@@ -30,7 +29,6 @@
 		DF4E60B927B8178600A48B73 /* QuizEnginee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuizEnginee.h; sourceTree = "<group>"; };
 		DF4E60BA27B8178600A48B73 /* QuizEnginee.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = QuizEnginee.docc; sourceTree = "<group>"; };
 		DF4E60C627B817B800A48B73 /* QuizEngineeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizEngineeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF4E60C827B817B800A48B73 /* QuizEngineeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEngineeTests.swift; sourceTree = "<group>"; };
 		DF4E60D027B817C800A48B73 /* FlowTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTest.swift; sourceTree = "<group>"; };
 		DFCFB0E227B8C106003E286F /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,7 +83,6 @@
 		DF4E60C727B817B800A48B73 /* QuizEngineeTests */ = {
 			isa = PBXGroup;
 			children = (
-				DF4E60C827B817B800A48B73 /* QuizEngineeTests.swift */,
 				DF4E60D027B817C800A48B73 /* FlowTest.swift */,
 			);
 			path = QuizEngineeTests;
@@ -209,7 +206,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF4E60C927B817B800A48B73 /* QuizEngineeTests.swift in Sources */,
 				DF4E60D127B817C800A48B73 /* FlowTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
