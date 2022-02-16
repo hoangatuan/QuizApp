@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CorrectAnswerCell" rowHeight="76" id="e71-K8-Nos" customClass="CorrectAnswerCell" customModule="QuizApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="445" height="76"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e71-K8-Nos" id="BOH-JE-jXe">
+                <rect key="frame" x="0.0" y="0.0" width="445" height="76"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPS-s6-49P">
+                        <rect key="frame" x="8" y="8" width="429" height="31"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGX-dW-lIU">
+                        <rect key="frame" x="8" y="47" width="429" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" systemColor="systemGreenColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uGX-dW-lIU" firstAttribute="leading" secondItem="BOH-JE-jXe" secondAttribute="leading" constant="8" id="2Vd-jk-lxT"/>
+                    <constraint firstItem="uGX-dW-lIU" firstAttribute="top" secondItem="PPS-s6-49P" secondAttribute="bottom" constant="8" id="CwN-Px-PuN"/>
+                    <constraint firstItem="PPS-s6-49P" firstAttribute="top" secondItem="BOH-JE-jXe" secondAttribute="top" constant="8" id="EQO-HU-sC3"/>
+                    <constraint firstAttribute="trailing" secondItem="uGX-dW-lIU" secondAttribute="trailing" constant="8" id="MVY-Hy-Eib"/>
+                    <constraint firstItem="PPS-s6-49P" firstAttribute="leading" secondItem="BOH-JE-jXe" secondAttribute="leading" constant="8" id="QqH-bF-Id8"/>
+                    <constraint firstAttribute="bottom" secondItem="uGX-dW-lIU" secondAttribute="bottom" constant="8" id="Tzq-qb-hU1"/>
+                    <constraint firstAttribute="trailing" secondItem="PPS-s6-49P" secondAttribute="trailing" constant="8" id="uld-ZH-gls"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="answerLabel" destination="uGX-dW-lIU" id="uWh-Y8-05l"/>
+                <outlet property="questionLabel" destination="PPS-s6-49P" id="5h2-4p-lLc"/>
+            </connections>
+            <point key="canvasLocation" x="-60.14492753623189" y="104.46428571428571"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
