@@ -7,27 +7,21 @@
 
 import Foundation
 
-protocol Router {
-    associatedtype Question: Hashable
-    associatedtype Answer
-    
-    func routeTo(question: Question, callback: @escaping (Answer) -> Void)
-    func routeTo(results: [Question: Answer])
-}
-
 class Flow<Question, Answer, R: Router> where Question == R.Question, Answer == R.Answer {
     private var results: [Question: Answer] = [:]
     var router: R
-    let questions: [Question]
+    private let questions: [Question]
+    private var scoring: (([Question: Answer]) -> Int)
     
-    init(questions: [Question], router: R) {
+    init(questions: [Question], router: R, scoring: @escaping ([Question: Answer]) -> Int) {
         self.questions = questions
         self.router = router
+        self.scoring = scoring
     }
     
     func start() {
         guard let question = questions.first else {
-            router.routeTo(results: results)
+            router.routeTo(results: QuizResult(answers: results, score: scoring(results)))
             return
         }
         
@@ -49,7 +43,7 @@ class Flow<Question, Answer, R: Router> where Question == R.Question, Answer == 
                 self?.handleAnswerCallback(of: nextQuestion, $0)
             })
         } else {
-            router.routeTo(results: results)
+            router.routeTo(results: QuizResult(answers: results, score: scoring(results)))
         }
     }
 }

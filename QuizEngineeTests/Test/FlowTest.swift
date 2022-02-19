@@ -63,7 +63,7 @@ class FlowTest: XCTestCase {
         router.callbackAnswer("A1")
         router.callbackAnswer("A2")
         
-        XCTAssertEqual(router.results, ["Q1":"A1", "Q2":"A2"])
+        XCTAssertEqual(router.results?.answers, ["Q1":"A1", "Q2":"A2"])
     }
     
     func test_notAnswerAllQuestion_doesNotRouteToResult() {
@@ -78,28 +78,39 @@ class FlowTest: XCTestCase {
         let sut = makeSUT(questions: [])
         sut.start()
         
-        XCTAssertEqual(router.results, [:])
+        XCTAssertEqual(router.results?.answers, [:])
     }
     
-    class RouterMock: Router {
-        var results: [String: String]?
-        var routedQuestions: [String] = []
-        var callbackAnswer: ((String) -> Void) = { _ in }
-        
-        func routeTo(question: String, callback: @escaping (String) -> Void) {
-            routedQuestions.append(question)
-            callbackAnswer = callback
+    func test_startAndAnswerFirstAndSecondQuestion_withTwoQuestions_score() {
+        let sut = makeSUT(questions: ["Q1", "Q2"]) { _ in
+            return 10
         }
+        sut.start()
         
-        func routeTo(results: [String : String]) {
-            self.results = results
+        router.callbackAnswer("A1")
+        router.callbackAnswer("A2")
+        
+        XCTAssertEqual(router.results?.score, 10)
+    }
+    
+    func test_startAndAnswerFirstAndSecondQuestion_withTwoQuestions_scoreWithCorrectAnswers() {
+        var receivedAnswers: [String: String]?
+        let sut = makeSUT(questions: ["Q1", "Q2"]) {
+            receivedAnswers = $0
+            return 10
         }
+        sut.start()
+        
+        router.callbackAnswer("A1")
+        router.callbackAnswer("A2")
+        XCTAssertEqual(receivedAnswers, ["Q1":"A1", "Q2":"A2"])
     }
 }
 
 extension FlowTest {
-    func makeSUT(questions: [String]) -> Flow<String, String, RouterMock> {
-        let sut = Flow(questions: questions, router: router)
+    func makeSUT(questions: [String],
+                 scoring: @escaping ([String: String]) -> Int = { _ in return 0 }) -> Flow<String, String, RouterMock> {
+        let sut = Flow(questions: questions, router: router, scoring: scoring)
         return sut
     }
 }
