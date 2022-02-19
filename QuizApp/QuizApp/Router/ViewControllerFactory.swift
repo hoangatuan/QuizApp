@@ -6,7 +6,9 @@
 //
 
 import UIKit
+import QuizEnginee
 
 protocol ViewControllerFactory {
-    func questionViewController(for question: String, answer: (String) -> Void) -> UIViewController
+    func questionViewController(for question: Question<String>, answer: (String) -> Void) -> UIViewController
+    func resultViewController(for result: QuizResult<Question<String>, String>) -> UIViewController
 }

@@ -19,6 +19,8 @@
 		DF47BCAA27C0E79E00AC67DB /* NavigationControllerRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47BCA927C0E79E00AC67DB /* NavigationControllerRouterTest.swift */; };
 		DF47BCAD27C0E92200AC67DB /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47BCAC27C0E92200AC67DB /* NavigationControllerRouter.swift */; };
 		DF47BCAF27C1082D00AC67DB /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47BCAE27C1082D00AC67DB /* ViewControllerFactory.swift */; };
+		DF47BCB127C128A000AC67DB /* QuestionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47BCB027C128A000AC67DB /* QuestionTest.swift */; };
+		DF47BCB327C12EB500AC67DB /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47BCB227C12EB500AC67DB /* Question.swift */; };
 		DF69D66427BCFD4600A70150 /* ResultViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF69D66327BCFD4600A70150 /* ResultViewControllerTest.swift */; };
 		DF69D66827BCFDBB00A70150 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF69D66727BCFDBB00A70150 /* ResultViewController.swift */; };
 		DF69D66A27BCFDD400A70150 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF69D66927BCFDD400A70150 /* ResultViewController.xib */; };
@@ -66,6 +68,8 @@
 		DF47BCA927C0E79E00AC67DB /* NavigationControllerRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouterTest.swift; sourceTree = "<group>"; };
 		DF47BCAC27C0E92200AC67DB /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
 		DF47BCAE27C1082D00AC67DB /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		DF47BCB027C128A000AC67DB /* QuestionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTest.swift; sourceTree = "<group>"; };
+		DF47BCB227C12EB500AC67DB /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		DF69D66327BCFD4600A70150 /* ResultViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewControllerTest.swift; sourceTree = "<group>"; };
 		DF69D66727BCFDBB00A70150 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		DF69D66927BCFDD400A70150 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 		DF360D4127BD09ED006BB07E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DF47BCB227C12EB500AC67DB /* Question.swift */,
 				DF360D4227BD09F8006BB07E /* PresentableAnswer.swift */,
 			);
 			path = Model;
@@ -148,6 +153,7 @@
 				DF834B1B27BC00E3001C86BD /* QuestionViewControllerTest.swift */,
 				DF69D66327BCFD4600A70150 /* ResultViewControllerTest.swift */,
 				DF47BCA927C0E79E00AC67DB /* NavigationControllerRouterTest.swift */,
+				DF47BCB027C128A000AC67DB /* QuestionTest.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -358,6 +364,7 @@
 				DF360D3727BD0414006BB07E /* CorrectAnswerCell.swift in Sources */,
 				DF47BCAF27C1082D00AC67DB /* ViewControllerFactory.swift in Sources */,
 				DF834B0227BBFBEB001C86BD /* AppDelegate.swift in Sources */,
+				DF47BCB327C12EB500AC67DB /* Question.swift in Sources */,
 				DF360D4327BD09F8006BB07E /* PresentableAnswer.swift in Sources */,
 				DF360D4027BD0722006BB07E /* UITableView+.swift in Sources */,
 				DF834B2327BC01FB001C86BD /* QuestionViewController.swift in Sources */,
@@ -369,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF47BCB127C128A000AC67DB /* QuestionTest.swift in Sources */,
 				DF47BCAA27C0E79E00AC67DB /* NavigationControllerRouterTest.swift in Sources */,
 				DF360D3427BD038A006BB07E /* UITableView+.swift in Sources */,
 				DF834B1C27BC00E3001C86BD /* QuestionViewControllerTest.swift in Sources */,
