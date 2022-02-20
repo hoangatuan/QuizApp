@@ -31,6 +31,8 @@
 		DF834B1C27BC00E3001C86BD /* QuestionViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF834B1B27BC00E3001C86BD /* QuestionViewControllerTest.swift */; };
 		DF834B2327BC01FB001C86BD /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF834B2227BC01FB001C86BD /* QuestionViewController.swift */; };
 		DF834B2727BC03BC001C86BD /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF834B2627BC03BC001C86BD /* QuestionViewController.xib */; };
+		DFC4B38527C2190E008416A4 /* ResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4B38427C2190E008416A4 /* ResultPresenter.swift */; };
+		DFC4B38727C2191F008416A4 /* ResultPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4B38627C2191F008416A4 /* ResultPresenterTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		DF834B1B27BC00E3001C86BD /* QuestionViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewControllerTest.swift; sourceTree = "<group>"; };
 		DF834B2227BC01FB001C86BD /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		DF834B2627BC03BC001C86BD /* QuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionViewController.xib; sourceTree = "<group>"; };
+		DFC4B38427C2190E008416A4 /* ResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPresenter.swift; sourceTree = "<group>"; };
+		DFC4B38627C2191F008416A4 /* ResultPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPresenterTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,7 @@
 				DF47BCA927C0E79E00AC67DB /* NavigationControllerRouterTest.swift */,
 				DF47BCB027C128A000AC67DB /* QuestionTest.swift */,
 				DF47BCB427C1437A00AC67DB /* IOSViewControllerFactoryTest.swift */,
+				DFC4B38627C2191F008416A4 /* ResultPresenterTest.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 				DF360D3527BD040A006BB07E /* Cell */,
 				DF69D66727BCFDBB00A70150 /* ResultViewController.swift */,
 				DF69D66927BCFDD400A70150 /* ResultViewController.xib */,
+				DFC4B38427C2190E008416A4 /* ResultPresenter.swift */,
 			);
 			path = ResultView;
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 				DF360D4327BD09F8006BB07E /* PresentableAnswer.swift in Sources */,
 				DF360D4027BD0722006BB07E /* UITableView+.swift in Sources */,
 				DF834B2327BC01FB001C86BD /* QuestionViewController.swift in Sources */,
+				DFC4B38527C2190E008416A4 /* ResultPresenter.swift in Sources */,
 				DF69D66827BCFDBB00A70150 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF47BCB127C128A000AC67DB /* QuestionTest.swift in Sources */,
+				DFC4B38727C2191F008416A4 /* ResultPresenterTest.swift in Sources */,
 				DF47BCAA27C0E79E00AC67DB /* NavigationControllerRouterTest.swift in Sources */,
 				DF360D3427BD038A006BB07E /* UITableView+.swift in Sources */,
 				DF834B1C27BC00E3001C86BD /* QuestionViewControllerTest.swift in Sources */,
