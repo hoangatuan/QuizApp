@@ -14,9 +14,11 @@ protocol ViewControllerFactory {
 }
 
 class IOSViewControllerFactory: ViewControllerFactory {
+    private let questions: [Question<String>]
     private let options: [Question<String>: [String]]
      
-    init(options: [Question<String>: [String]]) {
+    init(questions: [Question<String>], options: [Question<String>: [String]]) {
+        self.questions = questions
         self.options = options
     }
     
@@ -37,12 +39,19 @@ extension IOSViewControllerFactory {
     private func createQuestionViewController(question: Question<String>, options: [String], callback: @escaping ([String]) -> Void) -> UIViewController {
         switch question {
         case .singleAnswer(let value):
-            return QuestionViewController(question: value, options: options, callback: callback)
+            return questionViewController(question: question, value: value, options: options, callback: callback)
         case .multipleAnswer(let value):
-            let controller = QuestionViewController(question: value, options: options, callback: callback)
+            let controller = questionViewController(question: question, value: value, options: options, callback: callback)
             controller.loadViewIfNeeded()
             controller.optionsTableView.allowsMultipleSelection = true
             return controller
         }
+    }
+    
+    private func questionViewController(question: Question<String>, value: String, options: [String], callback: @escaping ([String]) -> Void) -> QuestionViewController {
+        let controller = QuestionViewController(question: value, options: options, callback: callback)
+        let presenter = QuestionPresenter(questions: questions, question: question)
+        controller.title = presenter.title
+        return controller
     }
 }
