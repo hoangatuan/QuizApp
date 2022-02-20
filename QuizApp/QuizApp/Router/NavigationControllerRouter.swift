@@ -17,12 +17,12 @@ class NavigationControllerRouter: Router {
         self.viewControllerFactory = factory
     }
     
-    func routeTo(question: Question<String>, callback: @escaping (String) -> Void) {
+    func routeTo(question: Question<String>, callback: @escaping ([String]) -> Void) {
         let viewController = viewControllerFactory.questionViewController(for: question, answer: callback)
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    func routeTo(results: QuizResult<Question<String>, String>) {
+    func routeTo(results: QuizResult<Question<String>, [String]>) {
         let resultViewController = viewControllerFactory.resultViewController(for: results)
         navigationController.pushViewController(resultViewController, animated: true)
     }

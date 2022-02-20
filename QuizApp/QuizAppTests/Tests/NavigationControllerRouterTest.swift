@@ -47,7 +47,7 @@ class NavigationControllerRouterTest: XCTestCase {
         let viewController = UIViewController()
         factory.stubResult(with: viewController)
         
-        var result: QuizResult<Question<String>, String>
+        var result: QuizResult<Question<String>, [String]>
         result = QuizResult(answers: [:], score: 0)
         router.routeTo(results: result)
         XCTAssertEqual(navigationController.viewControllers.last, viewController)
@@ -66,11 +66,11 @@ private class ViewControllerFactoryStub: ViewControllerFactory {
         resultViewController = viewController
     }
     
-    func questionViewController(for question: Question<String>, answer: (String) -> Void) -> UIViewController {
+    func questionViewController(for question: Question<String>, answer: ([String]) -> Void) -> UIViewController {
         return stubbedQuestions[question] ?? UIViewController()
     }
     
-    func resultViewController(for result: QuizResult<Question<String>, String>) -> UIViewController {
+    func resultViewController(for result: QuizResult<Question<String>, [String]>) -> UIViewController {
         return resultViewController ?? UIViewController()
     }
 }

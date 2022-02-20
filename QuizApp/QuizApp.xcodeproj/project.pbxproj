@@ -21,6 +21,7 @@
 		DF47BCAF27C1082D00AC67DB /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47BCAE27C1082D00AC67DB /* ViewControllerFactory.swift */; };
 		DF47BCB127C128A000AC67DB /* QuestionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47BCB027C128A000AC67DB /* QuestionTest.swift */; };
 		DF47BCB327C12EB500AC67DB /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47BCB227C12EB500AC67DB /* Question.swift */; };
+		DF47BCB527C1437B00AC67DB /* IOSViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47BCB427C1437A00AC67DB /* IOSViewControllerFactoryTest.swift */; };
 		DF69D66427BCFD4600A70150 /* ResultViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF69D66327BCFD4600A70150 /* ResultViewControllerTest.swift */; };
 		DF69D66827BCFDBB00A70150 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF69D66727BCFDBB00A70150 /* ResultViewController.swift */; };
 		DF69D66A27BCFDD400A70150 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF69D66927BCFDD400A70150 /* ResultViewController.xib */; };
@@ -70,6 +71,7 @@
 		DF47BCAE27C1082D00AC67DB /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		DF47BCB027C128A000AC67DB /* QuestionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTest.swift; sourceTree = "<group>"; };
 		DF47BCB227C12EB500AC67DB /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		DF47BCB427C1437A00AC67DB /* IOSViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSViewControllerFactoryTest.swift; sourceTree = "<group>"; };
 		DF69D66327BCFD4600A70150 /* ResultViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewControllerTest.swift; sourceTree = "<group>"; };
 		DF69D66727BCFDBB00A70150 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		DF69D66927BCFDD400A70150 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				DF69D66327BCFD4600A70150 /* ResultViewControllerTest.swift */,
 				DF47BCA927C0E79E00AC67DB /* NavigationControllerRouterTest.swift */,
 				DF47BCB027C128A000AC67DB /* QuestionTest.swift */,
+				DF47BCB427C1437A00AC67DB /* IOSViewControllerFactoryTest.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				DF360D3427BD038A006BB07E /* UITableView+.swift in Sources */,
 				DF834B1C27BC00E3001C86BD /* QuestionViewControllerTest.swift in Sources */,
 				DF69D66427BCFD4600A70150 /* ResultViewControllerTest.swift in Sources */,
+				DF47BCB527C1437B00AC67DB /* IOSViewControllerFactoryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

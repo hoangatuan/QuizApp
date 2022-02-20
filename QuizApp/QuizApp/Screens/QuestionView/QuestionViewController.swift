@@ -15,8 +15,8 @@ class QuestionViewController: UIViewController {
     // MARK: - Constants
     private let reuseIdentifier = "CELL"
     // MARK: - Variables
-    private var question: String?
-    private var options: [String] = []
+    private(set) var question: String?
+    private(set) var options: [String] = []
     var callbackAnswer: (([String]) -> Void)?
     
     convenience init(question: String, options: [String], callback: @escaping ([String]) -> Void) {
