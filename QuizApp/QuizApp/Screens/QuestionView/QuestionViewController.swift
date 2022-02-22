@@ -17,12 +17,16 @@ class QuestionViewController: UIViewController {
     // MARK: - Variables
     private(set) var question: String?
     private(set) var options: [String] = []
+    private var allowsMultipleSelection: Bool = false
     var callbackAnswer: (([String]) -> Void)?
     
-    convenience init(question: String, options: [String], callback: @escaping ([String]) -> Void) {
+    convenience init(question: String, options: [String],
+                     allowsMultipleSelection: Bool = false,
+                     callback: @escaping ([String]) -> Void) {
         self.init()
         self.question = question
         self.options = options
+        self.allowsMultipleSelection = allowsMultipleSelection
         self.callbackAnswer = callback
     }
     
@@ -30,6 +34,7 @@ class QuestionViewController: UIViewController {
         super.viewDidLoad()
         headerLabel.text = question
         
+        optionsTableView.allowsMultipleSelection = allowsMultipleSelection
         optionsTableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         optionsTableView.dataSource = self
         optionsTableView.delegate = self

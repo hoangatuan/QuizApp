@@ -39,17 +39,16 @@ extension IOSViewControllerFactory {
     private func createQuestionViewController(question: Question<String>, options: [String], callback: @escaping ([String]) -> Void) -> UIViewController {
         switch question {
         case .singleAnswer(let value):
-            return questionViewController(question: question, value: value, options: options, callback: callback)
+            return questionViewController(question: question, value: value, options: options, allowsMultipleSelection: false, callback: callback)
         case .multipleAnswer(let value):
-            let controller = questionViewController(question: question, value: value, options: options, callback: callback)
-            controller.loadViewIfNeeded()
-            controller.optionsTableView.allowsMultipleSelection = true
-            return controller
+            return questionViewController(question: question, value: value, options: options, allowsMultipleSelection: true, callback: callback)
         }
     }
     
-    private func questionViewController(question: Question<String>, value: String, options: [String], callback: @escaping ([String]) -> Void) -> QuestionViewController {
-        let controller = QuestionViewController(question: value, options: options, callback: callback)
+    private func questionViewController(question: Question<String>, value: String, options: [String],
+                                        allowsMultipleSelection: Bool,
+                                        callback: @escaping ([String]) -> Void) -> QuestionViewController {
+        let controller = QuestionViewController(question: value, options: options, allowsMultipleSelection: allowsMultipleSelection, callback: callback)
         let presenter = QuestionPresenter(questions: questions, question: question)
         controller.title = presenter.title
         return controller
