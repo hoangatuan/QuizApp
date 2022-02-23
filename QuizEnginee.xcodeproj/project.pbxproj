@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF06F45A27C686CA00424DB9 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF06F45927C686CA00424DB9 /* Question.swift */; };
+		DF06F45C27C686DE00424DB9 /* QuestionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF06F45B27C686DD00424DB9 /* QuestionTest.swift */; };
 		DF4E60BB27B8178600A48B73 /* QuizEnginee.docc in Sources */ = {isa = PBXBuildFile; fileRef = DF4E60BA27B8178600A48B73 /* QuizEnginee.docc */; };
 		DF4E60BC27B8178600A48B73 /* QuizEnginee.h in Headers */ = {isa = PBXBuildFile; fileRef = DF4E60B927B8178600A48B73 /* QuizEnginee.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DF4E60CA27B817B800A48B73 /* QuizEnginee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4E60B627B8178600A48B73 /* QuizEnginee.framework */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF06F45927C686CA00424DB9 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question.swift; path = QuizApp/QuizApp/Model/Question.swift; sourceTree = SOURCE_ROOT; };
+		DF06F45B27C686DD00424DB9 /* QuestionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTest.swift; sourceTree = "<group>"; };
 		DF4E60B627B8178600A48B73 /* QuizEnginee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuizEnginee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF4E60B927B8178600A48B73 /* QuizEnginee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuizEnginee.h; sourceTree = "<group>"; };
 		DF4E60BA27B8178600A48B73 /* QuizEnginee.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = QuizEnginee.docc; sourceTree = "<group>"; };
@@ -62,11 +66,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF06F45827C686C400424DB9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF06F45927C686CA00424DB9 /* Question.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DF47BCA127C0E4E600AC67DB /* Test */ = {
 			isa = PBXGroup;
 			children = (
 				DF4E60D027B817C800A48B73 /* FlowTest.swift */,
 				DFCB1E0627BEABF800A180C7 /* GameTest.swift */,
+				DF06F45B27C686DD00424DB9 /* QuestionTest.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -100,6 +113,7 @@
 		DF4E60B827B8178600A48B73 /* QuizEnginee */ = {
 			isa = PBXGroup;
 			children = (
+				DF06F45827C686C400424DB9 /* Model */,
 				DFCB1E0A27BEAD6F00A180C7 /* Game.swift */,
 				DFCFB0E227B8C106003E286F /* Flow.swift */,
 				DFCB1E0427BEABDD00A180C7 /* QuizResult.swift */,
@@ -231,6 +245,7 @@
 				DF4E60BB27B8178600A48B73 /* QuizEnginee.docc in Sources */,
 				DFCB1E0B27BEAD6F00A180C7 /* Game.swift in Sources */,
 				DFCB1E0327BEABCC00A180C7 /* Router.swift in Sources */,
+				DF06F45A27C686CA00424DB9 /* Question.swift in Sources */,
 				DFCFB0E327B8C106003E286F /* Flow.swift in Sources */,
 				DFCB1E0527BEABDD00A180C7 /* QuizResult.swift in Sources */,
 			);
@@ -241,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFCB1E0927BEAC8C00A180C7 /* RouterMock.swift in Sources */,
+				DF06F45C27C686DE00424DB9 /* QuestionTest.swift in Sources */,
 				DF4E60D127B817C800A48B73 /* FlowTest.swift in Sources */,
 				DFCB1E0727BEABF800A180C7 /* GameTest.swift in Sources */,
 			);

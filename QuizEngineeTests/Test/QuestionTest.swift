@@ -7,7 +7,7 @@
 
 import Foundation
 import XCTest
-@testable import QuizApp
+@testable import QuizEnginee
 
 class QuestionTest: XCTestCase {
     func test_questions_isEqual() {
