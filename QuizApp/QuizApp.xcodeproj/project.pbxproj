@@ -109,6 +109,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF06F45E27C6963400424DB9 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				DF47BCA927C0E79E00AC67DB /* NavigationControllerRouterTest.swift */,
+				DF47BCB427C1437A00AC67DB /* IOSViewControllerFactoryTest.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		DF06F45F27C6964100424DB9 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				DF06F46027C6964A00424DB9 /* Question */,
+				DF06F46127C6966300424DB9 /* Result */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		DF06F46027C6964A00424DB9 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				DF834B1B27BC00E3001C86BD /* QuestionViewControllerTest.swift */,
+				DFC4B38827C29088008416A4 /* QuestionPresenterTest.swift */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		DF06F46127C6966300424DB9 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				DF69D66327BCFD4600A70150 /* ResultViewControllerTest.swift */,
+				DFC4B38627C2191F008416A4 /* ResultPresenterTest.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
 		DF360D3227BD0380006BB07E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,12 +191,8 @@
 		DF47BCA827C0E71200AC67DB /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				DF834B1B27BC00E3001C86BD /* QuestionViewControllerTest.swift */,
-				DF69D66327BCFD4600A70150 /* ResultViewControllerTest.swift */,
-				DF47BCA927C0E79E00AC67DB /* NavigationControllerRouterTest.swift */,
-				DF47BCB427C1437A00AC67DB /* IOSViewControllerFactoryTest.swift */,
-				DFC4B38627C2191F008416A4 /* ResultPresenterTest.swift */,
-				DFC4B38827C29088008416A4 /* QuestionPresenterTest.swift */,
+				DF06F45E27C6963400424DB9 /* Router */,
+				DF06F45F27C6964100424DB9 /* Screens */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -177,8 +209,8 @@
 		DF69D65927BCEBC300A70150 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				DF69D66527BCFDA100A70150 /* QuestionView */,
-				DF69D66627BCFDAC00A70150 /* ResultView */,
+				DF69D66527BCFDA100A70150 /* Question */,
+				DF69D66627BCFDAC00A70150 /* Result */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -201,17 +233,17 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		DF69D66527BCFDA100A70150 /* QuestionView */ = {
+		DF69D66527BCFDA100A70150 /* Question */ = {
 			isa = PBXGroup;
 			children = (
 				DF834B2227BC01FB001C86BD /* QuestionViewController.swift */,
 				DF834B2627BC03BC001C86BD /* QuestionViewController.xib */,
 				DFE59B7227C292BC002133D7 /* QuestionPresenter.swift */,
 			);
-			path = QuestionView;
+			path = Question;
 			sourceTree = "<group>";
 		};
-		DF69D66627BCFDAC00A70150 /* ResultView */ = {
+		DF69D66627BCFDAC00A70150 /* Result */ = {
 			isa = PBXGroup;
 			children = (
 				DF360D3527BD040A006BB07E /* Cell */,
@@ -219,7 +251,7 @@
 				DF69D66927BCFDD400A70150 /* ResultViewController.xib */,
 				DFC4B38427C2190E008416A4 /* ResultPresenter.swift */,
 			);
-			path = ResultView;
+			path = Result;
 			sourceTree = "<group>";
 		};
 		DF834AF527BBFBEB001C86BD = {
