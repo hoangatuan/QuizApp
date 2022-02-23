@@ -6,27 +6,26 @@
 //
 
 import Foundation
+import QuizEnginee
 @testable import QuizApp
 import XCTest
 
 class IOSViewControllerFactoryTest: XCTestCase {
     private let options = ["A1", "A2"]
-    
+    private let singleAnswerQuestion = Question.singleAnswer("Q1")
     private let multipleAnswerQuestion = Question.multipleAnswer("Q1")
     
     func test_questionViewController_singleAnswer_createControllerWithTitle() {
-        let singleAnswerQuestion = Question.singleAnswer("Q1")
         let presenter = QuestionPresenter(questions: [singleAnswerQuestion, multipleAnswerQuestion], question: singleAnswerQuestion)
-        let factory = IOSViewControllerFactory(questions: [singleAnswerQuestion, multipleAnswerQuestion], options: [singleAnswerQuestion: options, multipleAnswerQuestion: options])
+        let factory = makeSUT(questions: [singleAnswerQuestion, multipleAnswerQuestion], options: [singleAnswerQuestion: options, multipleAnswerQuestion: options])
         
         let viewController = factory.questionViewController(for: singleAnswerQuestion, answer: { _ in })
         XCTAssertEqual(viewController.title, presenter.title)
     }
     
     func test_questionViewController_multipleAnswer_createControllerWithTitle() {
-        let singleAnswerQuestion = Question.singleAnswer("Q1")
         let presenter = QuestionPresenter(questions: [singleAnswerQuestion, multipleAnswerQuestion], question: multipleAnswerQuestion)
-        let factory = IOSViewControllerFactory(questions: [singleAnswerQuestion, multipleAnswerQuestion], options: [singleAnswerQuestion: options, multipleAnswerQuestion: options])
+        let factory = makeSUT(questions: [singleAnswerQuestion, multipleAnswerQuestion], options: [singleAnswerQuestion: options, multipleAnswerQuestion: options])
         
         let viewController = factory.questionViewController(for: multipleAnswerQuestion, answer: { _ in })
         XCTAssertEqual(viewController.title, presenter.title)
@@ -72,13 +71,32 @@ class IOSViewControllerFactoryTest: XCTestCase {
         XCTAssertTrue(viewController.optionsTableView.allowsMultipleSelection)
     }
     
+    func test_routeToResult_routeCorrectly() {
+        let questions = [singleAnswerQuestion, multipleAnswerQuestion]
+        let userAnswers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A2"]]
+        let correctAnswers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A1, A2"]]
+        
+        let result = QuizResult(answers: userAnswers, score: 1)
+        let presenter = ResultPresenter(questions: questions, result: result, correctAnswers: correctAnswers)
+        
+        let factory = makeSUT(questions: questions, correctAnswers: correctAnswers)
+        let viewController = factory.resultViewController(for: result) as! ResultViewController
+        
+        XCTAssertNotNil(viewController)
+        XCTAssertEqual(viewController.summary, presenter.summary)
+        XCTAssertEqual(viewController.answers.count, presenter.presentableAnswers.count)
+    }
+    
     // MARK: - Helpers
-    func makeSUT(question: Question<String>) -> IOSViewControllerFactory{
-        return IOSViewControllerFactory(questions: [], options: [question:options])
+    func makeSUT(questions: [Question<String>] = [],
+                 options: [Question<String>: [String]] = [:],
+                 correctAnswers: [Question<String>: [String]] = [:]) -> IOSViewControllerFactory {
+        return IOSViewControllerFactory(questions: questions, options: options, correctAnswers: correctAnswers)
     }
     
     func makeQuestionViewController(question: Question<String> = Question.singleAnswer("Q1")) -> QuestionViewController {
-        let controller = makeSUT(question: question).questionViewController(for: question, answer: { _ in }) as! QuestionViewController
+        let factory = IOSViewControllerFactory(questions: [], options: [question:options], correctAnswers: [:])
+        let controller = factory.questionViewController(for: question, answer: { _ in }) as! QuestionViewController
         controller.loadViewIfNeeded()
         return controller
     }
