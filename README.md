@@ -4,6 +4,10 @@
     - Integration Test
     - Technique
         - Mutation testing
+        - Refactoring
+        - Private extension
+        - Fix bug with TDD
+    - Note
         
 - Modular Architecture
     
@@ -40,6 +44,11 @@
 ### Fix bug with TDD
 -  write a test that replicates the unwanted behavior. (added a missing test case)
 - write the production code needed to make the test pass.
+
+## Note
+- Class A use method of class B ->
+    - Write test case for method of class B. (verify B.result == B.expectResult)
+    - Write test to verify if A use result of method B (verify A.result == B.result, not A.result == B.expectResult)
 
 # Modular Architecture
 - It's important to separate presentation logic and UI logic
